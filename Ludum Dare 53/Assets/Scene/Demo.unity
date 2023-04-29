@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.2257134, b: 0.30692226, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -216,19 +216,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: e7d3bf06c50b3f8458ac0accd8150d63, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e7d3bf06c50b3f8458ac0accd8150d63, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.2186432
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e7d3bf06c50b3f8458ac0accd8150d63, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.0105859935
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e7d3bf06c50b3f8458ac0accd8150d63, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2.1201186
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e7d3bf06c50b3f8458ac0accd8150d63, type: 3}
       propertyPath: m_LocalRotation.w
@@ -371,15 +371,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6e58c63bc14f2ca4a947f084da648f5b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 10.568035
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6e58c63bc14f2ca4a947f084da648f5b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.010585964
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6e58c63bc14f2ca4a947f084da648f5b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -16.725328
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6e58c63bc14f2ca4a947f084da648f5b, type: 3}
       propertyPath: m_LocalRotation.w
