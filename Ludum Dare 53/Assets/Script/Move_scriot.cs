@@ -4,19 +4,13 @@ using UnityEngine;
 
 public class Move_scriot : MonoBehaviour
 {
-
-    [SerializeField] float speed;
-    private float movement;
-   
+ 
     void Update()
     {
-        movement = Input.GetAxis("Horizontal");
-        transform.Translate(Vector3.right * speed * movement * Time.deltaTime);
-
-        float translation = Input.GetAxis("Vertical") * speed * Time.deltaTime; 
-        transform.Translate(0, 0, translation); 
-
-
+        
+       var horizontal = Input.GetAxis("Horizontal")*Time.deltaTime*5;
+       var vertical = Input.GetAxis("Vertical")*Time.deltaTime*5;
+        transform.Translate(horizontal,0,vertical);
 
     }
 }
