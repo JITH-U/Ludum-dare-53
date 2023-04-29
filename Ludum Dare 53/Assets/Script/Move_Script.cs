@@ -5,8 +5,8 @@ using UnityEngine;
 public class Move_Script : MonoBehaviour
 {
 
-    public float speed = 10.0f;
-    private float direction = 0.0f;
+    [SerializeField] float speed ;
+    private float direction ;
    
 
     void Update()
