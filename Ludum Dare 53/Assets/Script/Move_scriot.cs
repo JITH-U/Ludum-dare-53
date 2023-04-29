@@ -6,11 +6,13 @@ public class Move_scriot : MonoBehaviour
 {
 
     [SerializeField] float speed;
-    private float distance;
+   
    
     void Update()
     {
-        distance = Input.GetAxis("Horizontal");
-        transform.Translate(Vector3.right * speed * distance * Time.deltaTime);
+        
+       var horizontal = Input.GetAxis("Horizontal")*Time.deltaTime*5;
+       var vertical = Input.GetAxis("Vertical")*Time.deltaTime*5;
+        transform.Translate(horizontal,0,vertical);
     }
 }
