@@ -6072,6 +6072,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b3bfdc11c7193c04d93f651feb81749f, type: 3}
+--- !u!4 &389991899 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7872975678746820950, guid: 1e156c7a96865b34c8ad608efe39ab80, type: 3}
+  m_PrefabInstance: {fileID: 835245639}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &392470718
 GameObject:
   m_ObjectHideFlags: 0
@@ -12025,11 +12030,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7872975678746820950, guid: 1e156c7a96865b34c8ad608efe39ab80, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -176.2
+      value: -175.12
       objectReference: {fileID: 0}
     - target: {fileID: 7872975678746820950, guid: 1e156c7a96865b34c8ad608efe39ab80, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.4
+      value: 0.12
       objectReference: {fileID: 0}
     - target: {fileID: 7872975678746820950, guid: 1e156c7a96865b34c8ad608efe39ab80, type: 3}
       propertyPath: m_LocalPosition.z
@@ -14296,6 +14301,7 @@ GameObject:
   - component: {fileID: 963194228}
   - component: {fileID: 963194227}
   - component: {fileID: 963194226}
+  - component: {fileID: 963194229}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -14361,14 +14367,33 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: -0.00354078, y: -0.9700834, z: -0.011038299, w: 0.24249493}
-  m_LocalPosition: {x: -10.946063, y: 2.4688408, z: 11.232449}
-  m_LocalScale: {x: 1.0000001, y: 1, z: 1}
+  m_LocalRotation: {x: -0.1179327, y: 0.004278943, z: -0.0013647416, w: -0.9930115}
+  m_LocalPosition: {x: -176.42924, y: 7.178319, z: -185.81732}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -1.3260001, y: -151.931, z: 0.087000005}
+--- !u!114 &963194229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963194225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 104d1e035e5cc5843bd869af77c4a046, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  car: {fileID: 389991899}
+  distance: 6.5
+  height: 2.3
+  rotationDamping: 3
+  heightDamping: 2
+  zoomRatio: 0.5
+  defaultFOV: 60
 --- !u!1 &966070865
 GameObject:
   m_ObjectHideFlags: 0
