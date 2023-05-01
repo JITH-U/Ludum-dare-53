@@ -14,18 +14,17 @@ public class DeliveryManager : MonoBehaviour
     [SerializeField] private Transform[] packagePoints;
     [SerializeField] private Transform[] deliveryPoints;
     [SerializeField] private Package packagePrefab;
+    [SerializeField] private Transform pointerArrow;
 
     [Header("Delivery Info")]
     [SerializeField] private Delivery currentDelivery;
     [SerializeField] private int minPackages = 1;
-    [SerializeField] private int maxPackages = 4;
-    [SerializeField] private int timeBtnDelivery = 5;             
+    [SerializeField] private int maxPackages = 4;         
 
     [Header("UI")]
     [SerializeField] private TMP_Text packagesText;
     [SerializeField] private TMP_Text deliveredText;
     [SerializeField] private TMP_Text infoText;
-    [SerializeField] private TMP_Text deliveryTimerText;
 
     // Private variables
     private int packagesCount = 0;
@@ -33,8 +32,7 @@ public class DeliveryManager : MonoBehaviour
     [HideInInspector] private readonly List<Transform> tempPackagePoints = new();
     [HideInInspector] private int index;
     [HideInInspector] private Package spawnedPackage;
-    private float timer;
-    [HideInInspector] private bool isDeliveryDone;
+    [HideInInspector] private bool isDeliveryDone, canUpdatePointer;
 
     private void Awake()
     {
@@ -53,9 +51,7 @@ public class DeliveryManager : MonoBehaviour
         index = -1;
         packagesCount = 0;
         infoText.gameObject.SetActive(false);
-        timer = timeBtnDelivery;
         isDeliveryDone = true;
-        deliveryTimerText.gameObject.SetActive(false);
 
         // deactivate all the delivery points
         for (int i = 0; i < deliveryPoints.Length; i++)
@@ -67,16 +63,14 @@ public class DeliveryManager : MonoBehaviour
         // start a new delivery
         if (isDeliveryDone)
         {
-            timer -= Time.deltaTime;
-            deliveryTimerText.text = $"Delivery Arrived In {(int)timer}s";
-            deliveryTimerText.gameObject.SetActive(true);
-            if (timer <= 0)
-            {
-                isDeliveryDone = false;
-                timer = timeBtnDelivery;
-                deliveryTimerText.gameObject.SetActive(false);
-                CreateNewDelivery();
-            }
+            isDeliveryDone = false;
+            canUpdatePointer = true;
+            CreateNewDelivery();
+        }
+        else if (canUpdatePointer)
+        {
+            // update pointer arrow rotation
+            pointerArrow.LookAt(currentDelivery.currentPoint);
         }
 
         //// test
@@ -106,7 +100,9 @@ public class DeliveryManager : MonoBehaviour
 
         currentDelivery.End();
         deliveryDone++;
-        Invoke(nameof(StartNewDelivery), 4);        // wait 2 sec before start new delivery
+        Invoke(nameof(StartNewDelivery), 2);        // wait 2 sec before start new delivery
+        canUpdatePointer = false;
+        pointerArrow.localRotation = Quaternion.identity;
 
         // update UI
         packagesText.text = $"0/0";
@@ -114,7 +110,7 @@ public class DeliveryManager : MonoBehaviour
 
         infoText.text = "Delivery Completed!";
         infoText.gameObject.SetActive(true);
-        Invoke(nameof(DisableInfo), 2);
+        Invoke(nameof(DisableInfo), 1.5f);
     }
 
     // Private Methods

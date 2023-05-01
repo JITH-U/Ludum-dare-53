@@ -11,6 +11,7 @@ public class Delivery
     public Transform deliveryPoint;
     public List<Package> packages = new();
     public int deliveredPackages = 0;
+    public Vector3 currentPoint;
 
     // Public Methods
     public void Start()
@@ -29,6 +30,7 @@ public class Delivery
         if (packages.Count <= 0)
         {
             deliveryPoint.gameObject.SetActive(true);
+            currentPoint = deliveryPoint.transform.position;
             return;
         }
 
@@ -47,7 +49,11 @@ public class Delivery
     {
         for (int i = 0; i < packages.Count; i++)
         {
-            if (i == index) packages[i].Show();
+            if (i == index)
+            {
+                packages[i].Show();
+                currentPoint = packages[i].transform.position;
+            }
             else packages[i].Hide();
         }
     }
