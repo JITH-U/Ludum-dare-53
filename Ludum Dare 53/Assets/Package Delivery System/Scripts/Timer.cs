@@ -20,7 +20,7 @@ public class Timer : MonoBehaviour
 
     private void Update()
     {
-        timer -= Time.fixedDeltaTime;
+        timer -= Time.deltaTime;
         if (timer <= 0) timer = 0;
         UpdateTimerDisplay();
     }
