@@ -1,0 +1,67 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4020064580332968901
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4020064580332968906}
+  - component: {fileID: 4020064580332968907}
+  m_Layer: 0
+  m_Name: soundmanager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4020064580332968906
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4020064580332968901}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4020064580332968907
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4020064580332968901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26109ea2c5cd02d45a026205591be8e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sound:
+  - Name: click
+    audioClip: {fileID: 8300000, guid: 5831ad3f0b53abc4f96f173f4251bfd5, type: 3}
+    volume: 1
+    source: {fileID: 0}
+    loop: 0
+  - Name: pickup
+    audioClip: {fileID: 8300000, guid: 4492f587dd939544c9090b7521c1a3c2, type: 3}
+    volume: 1
+    source: {fileID: 0}
+    loop: 0
+  - Name: drop
+    audioClip: {fileID: 8300000, guid: a60745f60c44da34aa6505179e3ad644, type: 3}
+    volume: 1
+    source: {fileID: 0}
+    loop: 0
+  - Name: theme
+    audioClip: {fileID: 8300000, guid: 1482ccb98b937b248a92bb1dd6cf8a6f, type: 3}
+    volume: 1
+    source: {fileID: 0}
+    loop: 1

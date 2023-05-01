@@ -14,6 +14,7 @@ public class car_movements : MonoBehaviour
     public LayerMask ground;
     public Animator caranime;
     private bool _isGrounded,tyremark;
+    public ParticleSystem ps;
     void Start()
     {
         controller_RB.transform.parent = null;
@@ -117,6 +118,6 @@ public class car_movements : MonoBehaviour
             caranime.SetBool("revrs", false);
         }
     }
-
    
+
 }

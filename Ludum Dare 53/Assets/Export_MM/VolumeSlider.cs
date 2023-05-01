@@ -56,6 +56,7 @@ public class VolumeSlider : MonoBehaviour
     }
     public void BackToMainMenu()
     {
+        FindObjectOfType<soundmanager>().play("click");
         VolumeCanvas.enabled= false;
         MainMenuCanvas.gameObject.SetActive(true);
     }

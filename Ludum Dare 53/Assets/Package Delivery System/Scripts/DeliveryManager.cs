@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 /// <summary>
@@ -25,11 +26,15 @@ public class DeliveryManager : MonoBehaviour
     [SerializeField] private TMP_Text packagesText;
     [SerializeField] private TMP_Text deliveredText;
     [SerializeField] private TMP_Text infoText;
+    [SerializeField] private Text Scoretxt;
+    [SerializeField] private Text Scoretxt2;
+    [SerializeField] private Text highscore;
 
     // Private variables
+    private int score;
     private int packagesCount = 0;
     private int deliveryDone = 0;
-    [HideInInspector] private readonly List<Transform> tempPackagePoints = new();
+    [HideInInspector] private  List<Transform> tempPackagePoints = new();
     [HideInInspector] private int index;
     [HideInInspector] private Package spawnedPackage;
     [HideInInspector] private bool isDeliveryDone, canUpdatePointer;
@@ -37,12 +42,7 @@ public class DeliveryManager : MonoBehaviour
     private void Awake()
     {
         // make singleton
-        if (Instance == null)
-        {
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else Destroy(Instance);
+        Instance = this;
     }
 
     private void Start()
@@ -70,9 +70,20 @@ public class DeliveryManager : MonoBehaviour
         else if (canUpdatePointer)
         {
             // update pointer arrow rotation
+            
             pointerArrow.LookAt(currentDelivery.currentPoint);
+            
+            
         }
+        score =  packagesCount * deliveryDone * 50;
+        Scoretxt.text = score.ToString();
+        Scoretxt2.text = score.ToString();
+        highscore.text = PlayerPrefs.GetInt("HighScore",0).ToString();
 
+        if(score > PlayerPrefs.GetInt("HighScore", 0))
+        {
+            PlayerPrefs.SetInt("HighScore", score);
+        }
         //// test
         //if (Input.GetKeyDown(KeyCode.Space))
         //    CreateNewDelivery();
@@ -118,6 +129,7 @@ public class DeliveryManager : MonoBehaviour
     {
         // initialize temppackagepoints
         tempPackagePoints.Clear();
+        tempPackagePoints = new();
         for (int i = 0; i < packagePoints.Length; i++)
             tempPackagePoints.Add(packagePoints[i].transform);
 

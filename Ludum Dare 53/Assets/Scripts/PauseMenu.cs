@@ -36,6 +36,7 @@ public class PauseMenu : MonoBehaviour
     }
     public void Resume()
     {
+        FindObjectOfType<soundmanager>().play("click");
         AudioListener.volume = volumeFloat;
 
         Time.timeScale = 1;
@@ -43,13 +44,15 @@ public class PauseMenu : MonoBehaviour
     }
     public void ReturnToMainMenu()
     {
-
+        FindObjectOfType<soundmanager>().play("click");
         Time.timeScale = 1;
         AudioListener.volume = volumeFloat;
         Invoke("GotoMain", 0.2f);
     }
     public void Retry()
     {
+
+        FindObjectOfType<soundmanager>().play("click");
         Time.timeScale = 1;
         AudioListener.volume = volumeFloat;
         StartCoroutine(retrying());
