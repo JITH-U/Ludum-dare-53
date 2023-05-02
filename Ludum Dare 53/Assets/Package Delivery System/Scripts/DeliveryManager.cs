@@ -63,6 +63,7 @@ public class DeliveryManager : MonoBehaviour
         // start a new delivery
         if (isDeliveryDone)
         {
+            score += packagesCount + deliveryDone * 50 ;
             isDeliveryDone = false;
             canUpdatePointer = true;
             CreateNewDelivery();
@@ -75,7 +76,7 @@ public class DeliveryManager : MonoBehaviour
             
             
         }
-        score =  packagesCount * deliveryDone * 50;
+        
         Scoretxt.text = score.ToString();
         Scoretxt2.text = score.ToString();
         highscore.text = PlayerPrefs.GetInt("HighScore",0).ToString();
